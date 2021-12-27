@@ -5,7 +5,7 @@ public class EmployeePayrollDTO {
 	public long salary;
 	
 	public EmployeePayrollDTO(String name, long salary) {
-		super();
+		
 		this.name = name;
 		this.salary = salary;
 	}

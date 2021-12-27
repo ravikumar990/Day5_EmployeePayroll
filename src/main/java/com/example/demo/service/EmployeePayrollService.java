@@ -30,7 +30,7 @@ private List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 	 */
 	@Override
 	public EmployeePayrollData getEmployeePayrollDataById(int empId) {
-		return employeePayrollList.get(empId);
+		return employeePayrollList.get(empId-1);
 	}
 
 	/**
@@ -64,12 +64,6 @@ private List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 	@Override
 	public void deleteEmployeePayrollData(int empId) {
 		employeePayrollList.remove(empId-1);
-	}
-
-	@Override
-	public EmployeePayrollData updateEmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

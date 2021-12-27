@@ -33,7 +33,7 @@ public class EmployeePayRollController {
 	@RequestMapping(value = { "/getAll" })
 	public ResponseEntity<ResponseDTO> getEmployeePayrollData() {
 		List<EmployeePayrollData> empDataList = null;
-		empDataList = employeePayrollService.getEmployeePayRollData();
+		empDataList = employeePayrollService.getEmployeePayrollData();
 		ResponseDTO respDTO = new ResponseDTO("Get call Successful:", empDataList);
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 	}
@@ -74,7 +74,7 @@ public class EmployeePayRollController {
 	public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,
 			@RequestBody EmployeePayrollDTO empPayrollDTO) {
 		EmployeePayrollData empData = null;
-		empData = employeePayrollService.updateEmployeePayrollData(empPayrollDTO);
+		empData = employeePayrollService.updateEmployeePayrollData(empId, empPayrollDTO);
 		ResponseDTO respDTO = new ResponseDTO("Updated Employee PayrollData Successfully:", empData);
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 
@@ -91,5 +91,6 @@ public class EmployeePayRollController {
 		ResponseDTO respDTO = new ResponseDTO("Deleted Successful,Deleted Id:", +empId);
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 	}
+
 
 }

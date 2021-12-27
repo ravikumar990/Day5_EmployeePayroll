@@ -6,7 +6,7 @@ public class ResponseDTO {
 	private Object data;
 
 	public ResponseDTO(String message, Object data) {
-		super();
+		
 		this.message = message;
 		this.data = data;
 	}
